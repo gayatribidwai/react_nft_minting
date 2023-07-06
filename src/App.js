@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Wallet_cart from './components/Wallet_cart';
 import MintNFT from './components/MintNFT';
+import Buy_Nft from './components/Buy_Nft';
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/MintNFT" element={<MintNFT />} />
-            {/* <Route path="/profile" element={<Profile />} />
-            <Route path="/sellNFT" element={<SellNFT />} /> */}
+            <Route path="/Buy_Nft" element={<Buy_Nft />} />
+            {/* <Route path="/sellNFT" element={<SellNFT />} /> */}
           </Routes>
         </div>
       </>
