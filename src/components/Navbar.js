@@ -13,7 +13,7 @@ export default function Navbar(props) {
           <a className="nav-link active" aria-current="page" href="#" style={{ fontWeight: 'bold', fontSize: '18px' }}>Buy</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#" style={{ fontWeight: 'bold', fontSize: '18px' }}>Mint</a>
+          <a className="nav-link active" aria-current="page" href="/MintNFT" style={{ fontWeight: 'bold', fontSize: '18px' }}>Mint</a>
         </li>
       </ul>
     </div>
