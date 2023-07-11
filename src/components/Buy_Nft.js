@@ -129,11 +129,6 @@ export default function Buy_Nft() {
   return (
     <>
     <div>
-      {/* <h1>NFT Marketplace</h1> */}
-      <div style={{ textAlign: 'center' }}>
-  <h1 style={{ display: 'inline-block' }}>NFT Marketplace</h1>
-</div>
-
       <ContractConnector onConnected={handleConnected} />
       <div>
         {/* <p>Contract Address: {contractAddress}</p> */}

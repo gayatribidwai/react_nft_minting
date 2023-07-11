@@ -10,9 +10,12 @@ function App() {
   return (
     <Router>
       <>
+      <div style={{ textAlign: 'center' }}>
+        <h1 style={{ display: 'inline-block' }}>NFT Marketplace</h1>
+      </div>
       <Wallet_cart />
         <Navbar />
-        
+        {/* <getAllNFTs/> */}
         <div className="container">
           <Routes>
             <Route path="/MintNFT" element={<MintNFT />} />
