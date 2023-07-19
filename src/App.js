@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Wallet_cart from './components/Wallet_cart';
 import MintNFT from './components/MintNFT';
 import Buy_Nft from './components/Buy_Nft';
+import NFTList from './components/NFTList';
 
 function App() {
   return (
@@ -15,12 +16,12 @@ function App() {
       </div>
       <Wallet_cart />
         <Navbar />
-        {/* <getAllNFTs/> */}
+      
         <div className="container">
           <Routes>
             <Route path="/MintNFT" element={<MintNFT />} />
             <Route path="/Buy_Nft" element={<Buy_Nft />} />
-            {/* <Route path="/sellNFT" element={<SellNFT />} /> */}
+            <Route path="/NFTList" element={<NFTList/>} />
           </Routes>
         </div>
       </>

@@ -15,6 +15,9 @@ export default function Navbar(props) {
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="/MintNFT" style={{ fontWeight: 'bold', fontSize: '18px' }}>Mint</a>
         </li>
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="/NFTList" style={{ fontWeight: 'bold', fontSize: '18px' }}>NFTList</a>
+        </li>
       </ul>
     </div>
   </div>

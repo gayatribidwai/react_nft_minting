@@ -1,31 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import Web3 from "web3";
 import Marketplace from "../contracts/NFTMarketplace.json";
+import "../style.css";
 
 const MintNFT = () => {
-  async function listNFT() {
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [metadataURL, setMetadataURL] = useState("");
+
+  const handleMintNFT = async () => {
     try {
+      if (!name || !price || !metadataURL) {
+        throw new Error("Please provide name, price, and metadata URL");
+      }
+
+      const convertedPrice = Web3.utils.toWei(price, "ether");
+
       if (window.ethereum) {
         await window.ethereum.request({ method: "eth_requestAccounts" });
         const web3 = new Web3(window.ethereum);
         const accounts = await web3.eth.getAccounts();
 
-        // Pull the deployed contract instance
         const contract = new web3.eth.Contract(
           Marketplace.abi,
           Marketplace.networks[5777].address // Replace <NETWORK_ID> with the desired network ID
         );
 
-        // Massage the params to be sent to the create NFT request
-        const price = web3.utils.toWei("1.2", "ether");
         const listingPrice = await contract.methods.getListPrice().call();
 
-        const metadataURL =
-          "https://gateway.pinata.cloud/ipfs/QmdEdRdLd9gpTXXyCpK8Ky7hgXHwDdedQnXZnZNsShLvz5";
-
-        // Actually create the NFT
         await contract.methods
-          .createToken(metadataURL, price)
+          .createToken(metadataURL, convertedPrice)
           .send({ from: accounts[0], value: listingPrice });
 
         alert("Successfully listed your NFT!");
@@ -35,20 +39,54 @@ const MintNFT = () => {
     } catch (error) {
       alert("Upload error: " + error.message);
     }
-  }
+  };
 
   return (
-    <div>
-      <button type="button" onClick={listNFT}>
+    <div className="mint-nft-container">
+      <div className="input-container">
+        <label htmlFor="name" className="label">
+          Name:
+        </label>
+        <input
+          type="text"
+          id="name"
+          className="input"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+      </div>
+      <div className="input-container">
+        <label htmlFor="price" className="label">
+          Price:
+        </label>
+        <input
+          type="number"
+          id="price"
+          className="input"
+          value={price}
+          onChange={(event) => setPrice(event.target.value)}
+        />
+      </div>
+      <div className="input-container">
+        <label htmlFor="metadataURL" className="label">
+          Metadata URL:
+        </label>
+        <input
+          type="text"
+          id="metadataURL"
+          className="input"
+          value={metadataURL}
+          onChange={(event) => setMetadataURL(event.target.value)}
+        />
+      </div>
+      <button type="button" onClick={handleMintNFT} className="mint-button">
         Mint NFT
       </button>
-      
     </div>
   );
 };
 
 export default MintNFT;
-
 
 
 
