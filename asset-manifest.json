@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react_nft_minting/static/css/main.e1e56acf.css",
+    "main.js": "/react_nft_minting/static/js/main.31e52796.js",
+    "static/js/787.db1c6d4d.chunk.js": "/react_nft_minting/static/js/787.db1c6d4d.chunk.js",
+    "index.html": "/react_nft_minting/index.html",
+    "main.e1e56acf.css.map": "/react_nft_minting/static/css/main.e1e56acf.css.map",
+    "main.31e52796.js.map": "/react_nft_minting/static/js/main.31e52796.js.map",
+    "787.db1c6d4d.chunk.js.map": "/react_nft_minting/static/js/787.db1c6d4d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e1e56acf.css",
+    "static/js/main.31e52796.js"
+  ]
+}
